@@ -1,0 +1,16 @@
+{
+  "rules": {
+    "semi": ["error", "always"]
+  },
+  "extends": ["next/babel","next/core-web-vitals"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  }
+}

@@ -1,0 +1,54 @@
+http:
+  port: 4000
+  host: 192.168.11.66
+
+apiEndpoints:
+  api:
+    host: 192.168.11.66
+    paths: '/ip'
+  webhook:
+    host: 192.168.11.66
+    paths: ['/webhook','/webhook/*']
+
+
+serviceEndpoints:
+  httpbin:
+    url: 'https://httpbin.org'
+  webhookService:
+    url: 'http://192.168.11.66:5000'
+
+
+policies:
+  - basic-auth
+  - cors
+  - expression
+  - key-auth
+  - log
+  - oauth2
+  - proxy
+  - rate-limit
+  - jwt                     #tambahan
+  - request-transformer     #tambahan
+
+
+pipelines:
+  default:
+    apiEndpoints:
+      - api
+    policies:
+    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+    # - key-auth:
+      - proxy:
+          - action:
+              serviceEndpoint: httpbin
+              changeOrigin: true
+              
+  webhookPipeline:
+    apiEndpoints:
+      - webhook
+    policies:
+      - proxy:
+          - action:
+              serviceEndpoint: webhookService
+              changeOrigin: true
+

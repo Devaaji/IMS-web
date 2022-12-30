@@ -1,0 +1,33 @@
+Document structure IMS WEB - Inventory Monitoring System 
+
+----------------------------------------------------------
+FOLDER STRUKTURE
+=> assets
+	=> fav          	: Untuk menyipan icons logo
+	=> images 	        : Untuk Menyimpan sebuah gambar berupa Logo dll.
+
+=> components
+
+	=> Chart		    : Menyimpan Charts
+	=> core		        : Menyimpan sebuah fitur icons, nextimages, loadingScreen
+	=> create		    : Untuk membuat menambahkan Data di modals
+	=> dashboard 	    : Untuk Membuat Navbar,MainLayout,Sidebar,Pagination dll
+	=> filter		    : Filter per pages dan untuk download data CSV, XLSX
+	=> hooks
+		=> remote   	: Memanggil sebuah data menggunakan React-Query 
+	=> modalDownload	: Fitur Download per pages
+	=> Modals	    	: Modal Detail get id per pages 
+	=> PageDashboard    : Untuk Memanggil Home Dashboard 
+	=> Table		    : Untuk Card per pages
+
+=> context
+	=> dashboard	    : Responsive untuk Sidebar with state react context
+
+=> libs					: Global Url in HTTPS 
+=> pages				: halaman per pages yang akan ditampilkan
+=> store				: State Management menggunakan zustand untuk membuat cookies saat login
+=> styles				: style global buat scrollbar custom
+=> theme				: Untuk Global Sebuah Tema dan warna yang akan dipakai 
+=> utils 				: Membantu Memanggil sebuah components bersifat global 
+
+
